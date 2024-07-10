@@ -1,18 +1,30 @@
+console.log('Server is starting...');
 const express = require('express');
-const cors = require('cors');
+const path = require('path');
 
 const app = express();
-const port = 3000;
 
-app.use(cors());
+// Serve the client-side files from the 'client/' directory
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.get('/vibrate', (req, res) => {
-  // Trigger the vibration on your partner's phone
-  // Replace this with the actual vibration logic
   console.log('Vibration request received');
   res.json({ success: true });
 });
 
-app.listen(3000, '0.0.0.0', () => {
-  console.log('Server is running on port 3000');
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+
+
+app.get('/', (req, res) => {
+  console.log('Received request for root path');
+  // Add your route handler code here
+});
+app.use((err, req, res, next) => {
+  console.error('Error occurred:', err);
+  res.status(500).send('Something went wrong!');
 });
