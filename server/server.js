@@ -22,10 +22,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
 
-app.get('/', (req, res) => {
-  console.log('Received request for root path');
-  // Add your route handler code here
-});
+
 app.use((err, req, res, next) => {
   console.error('Error occurred:', err);
   res.status(500).send('Something went wrong!');
