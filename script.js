@@ -11,7 +11,7 @@ document.getElementById('vibrateButton').addEventListener('click', () => {
 
 function sendVibrationRequest() {
   // Make an AJAX request to your server with the vibration request
-  fetch('http://your-server.com/vibrate')
+  fetch('/vibrate')
     .then(response => response.json())
     .then(data => {
       if (data.success) {

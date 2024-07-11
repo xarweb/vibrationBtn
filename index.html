@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Interactive Vibration</title>
+  <title>Anushka's Vibration Button</title>
+  <style>
+    body {
+      font-family: 'Parisienne', cursive;
+      background-color: #f8e7f3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #8b5c7e;
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    #vibrateButton {
+      background-color: #e694c7;
+      color: #fff;
+      font-size: 24px;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    #vibrateButton:hover {
+      transform: scale(1.1);
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #8b5c7e;
+    }
+  </style>
 </head>
 <body>
-  <h1>Vibrate with [Your Partner's Name]</h1>
+  <h1>Vibrate with Anushka</h1>
   <button id="vibrateButton">Vibrate Our Phones</button>
+  <div class="message">Sending vibrations of love to Anushka!</div>
 
   <script src="script.js"></script>
 </body>
