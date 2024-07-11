@@ -12,16 +12,14 @@ app.get('/vibrate', (req, res) => {
   res.json({ success: true });
 });
 
-const port = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../index.html'));
+});
 
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-app.get('/', (req, res) => {
-  console.log('Received request for root path');
-  res.sendFile(path.join(__dirname, '../client', 'index.html'));
-});
-
 
 app.use((err, req, res, next) => {
   console.error('Error occurred:', err);
